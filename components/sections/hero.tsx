@@ -10,6 +10,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { HeroBackground } from "@/components/HeroBackground";
 import { Marquee } from "@/components/sections/marquee";
 import { cn } from "@/lib/utils";
 
@@ -119,7 +120,7 @@ function LineReveal({ children, index, className, ...props }: { children: React.
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
-      <div className="hero-grid-lines absolute inset-0 gpu-accelerated" aria-hidden="true" />
+      <HeroBackground />
 
       <div className="absolute -left-40 -top-40 size-[560px] rounded-full bg-gradient-to-br from-amber-100/40 via-purple-100/30 to-transparent dark:from-purple-900/20 dark:via-violet-950/10 dark:to-transparent blur-[120px] gpu-accelerated" aria-hidden="true" />
 

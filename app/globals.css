@@ -42,7 +42,7 @@
   --grad-c: #e9d5ff;
   --grid-line: rgba(255, 255, 255, 0.03);
   --dot-line: rgba(255, 255, 255, 0.05);
-  --hero-grid-line: rgba(255, 255, 255, 0.03);
+  --hero-grid-line: rgba(124, 58, 237, 0.15);
   --scroll-track: #080511;
   --scroll-thumb: #2e1b47;
   --glow-acid: 192, 132, 252;
@@ -287,6 +287,39 @@ body {
 
 .dark .hero-orb {
   mix-blend-mode: screen;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Background (adapted from Uiverse.io by HarryHeywood04)
+   Animated diagonal grid pattern with theme-aware colors.
+   -------------------------------------------------------------------------- */
+.hero-bg {
+  background-color: var(--background);
+  background-image: linear-gradient(
+    32deg,
+    var(--hero-grid-line) 30px,
+    transparent
+  );
+  background-size: 60px 60px;
+  background-position: -5px -5px;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+@keyframes hero-bg-shift {
+  0% { background-position: -5px -5px; }
+  100% { background-position: 55px 55px; }
+}
+
+.hero-bg {
+  animation: hero-bg-shift 60s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg {
+    animation: none;
+  }
 }
 
 .btn-glow-acid {
