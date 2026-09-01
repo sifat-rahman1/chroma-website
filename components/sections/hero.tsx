@@ -164,7 +164,7 @@ export function Hero() {
                 Drive Growth.
                 <motion.span
                   aria-hidden
-                  className="absolute -bottom-2 left-0 h-[0.18em] w-full rounded-full bg-acid/60 blur-[2px]"
+                  className="absolute -bottom-1.5 left-0 h-[3px] w-full rounded-full bg-acid"
                   initial={{ scaleX: 0, opacity: 0 }}
                   animate={{ scaleX: 1, opacity: 1 }}
                   transition={{ duration: 0.9, delay: 1.3, ease: [0.22, 1, 0.36, 1] }}

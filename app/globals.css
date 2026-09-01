@@ -19,7 +19,7 @@
   --grad-c: #e9d5ff;
   --grid-line: rgba(15, 11, 30, 0.04);
   --dot-line: rgba(15, 11, 30, 0.06);
-  --hero-grid-line: rgba(15, 11, 30, 0.04);
+  --hero-grid-line: rgba(15, 11, 30, 0.09);
   --scroll-track: #fcfbfe;
   --scroll-thumb: #d8cffe;
   --glow-acid: 168, 85, 247;
@@ -42,7 +42,7 @@
   --grad-c: #e9d5ff;
   --grid-line: rgba(255, 255, 255, 0.03);
   --dot-line: rgba(255, 255, 255, 0.05);
-  --hero-grid-line: rgba(124, 58, 237, 0.15);
+  --hero-grid-line: rgba(139, 92, 246, 0.38);
   --scroll-track: #080511;
   --scroll-thumb: #2e1b47;
   --glow-acid: 192, 132, 252;
@@ -74,6 +74,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   overflow-x: hidden;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
@@ -291,10 +293,10 @@ body {
 
 /* --------------------------------------------------------------------------
    Hero Background (adapted from Uiverse.io by HarryHeywood04)
-   Animated diagonal grid pattern with theme-aware colors.
+   Animated diagonal grid pattern — crisp, no blur, theme-aware.
    -------------------------------------------------------------------------- */
 .hero-bg {
-  background-color: var(--background);
+  background-color: #080511;
   background-image: linear-gradient(
     32deg,
     var(--hero-grid-line) 30px,
@@ -302,37 +304,37 @@ body {
   );
   background-size: 60px 60px;
   background-position: -5px -5px;
+  /* Visible across most of hero, soft dissolve only at very edges */
+  mask-image: radial-gradient(
+    ellipse 85% 75% at 50% 42%,
+    black 45%,
+    transparent 88%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 85% 75% at 50% 42%,
+    black 45%,
+    transparent 88%
+  );
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
+  animation: hero-bg-shift 60s linear infinite;
 }
 
-/* Dark mode: reduce opacity only — pattern stays sharp */
+/* Light mode: use light background with subtle purple grid */
+:root .hero-bg {
+  background-color: #fcfbfe;
+}
+
+/* Dark mode: keep Midnight Obsidian base, pattern at reduced but legible opacity */
 .dark .hero-bg {
-  opacity: 0.15;
-}
-
-/* Radial mask to fade pattern toward edges */
-.hero-bg {
-  mask-image: radial-gradient(
-    ellipse 60% 70% at 50% 40%,
-    rgba(0, 0, 0, 1) 20%,
-    rgba(0, 0, 0, 0) 80%
-  );
-  -webkit-mask-image: radial-gradient(
-    ellipse 60% 70% at 50% 40%,
-    rgba(0, 0, 0, 1) 20%,
-    rgba(0, 0, 0, 0) 80%
-  );
+  background-color: #080511;
+  opacity: 0.85;
 }
 
 @keyframes hero-bg-shift {
   0% { background-position: -5px -5px; }
   100% { background-position: 55px 55px; }
-}
-
-.hero-bg {
-  animation: hero-bg-shift 60s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
