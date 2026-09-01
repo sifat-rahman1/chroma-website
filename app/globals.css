@@ -307,10 +307,9 @@ body {
   backface-visibility: hidden;
 }
 
-/* Dark mode: reduce opacity and add soft blur for depth of field */
+/* Dark mode: reduce opacity only — pattern stays sharp */
 .dark .hero-bg {
-  opacity: 0.18;
-  filter: blur(2px);
+  opacity: 0.15;
 }
 
 /* Radial mask to fade pattern toward edges */
