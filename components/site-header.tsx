@@ -104,7 +104,7 @@ export function SiteHeader() {
                 </div>
 
                 <div className="mt-auto space-y-4 border-t border-line pt-6">
-          <ThemeToggle compact className="hidden sm:flex" />
+                  <ThemeToggle />
                   <Button asChild className="w-full" size="lg">
                     <a href="#contact" onClick={() => setOpen(false)}>
                       Book a Strategy Call
