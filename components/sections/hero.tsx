@@ -122,9 +122,9 @@ export function Hero() {
     <section id="top" className="relative overflow-hidden">
       <HeroBackground />
 
-      {/* Ambient purple spotlight behind hero text for legibility */}
+      {/* Ambient spotlight behind hero text — hidden in light mode for clean backdrop */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-purple-950/50 blur-[120px] pointer-events-none transform-gpu"
+        className="hidden dark:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] dark:bg-purple-950/40 blur-[120px] pointer-events-none transform-gpu"
         aria-hidden="true"
       />
 
