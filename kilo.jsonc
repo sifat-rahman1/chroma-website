@@ -1,6 +1,13 @@
 {
   "instructions": [
     "https://raw.githubusercontent.com/MarketingPipeline/Awesome-CSS-Resources/main/README.md",
-    "https://raw.githubusercontent.com/alexpate/awesome-design-systems/master/README.md"
+    "https://raw.githubusercontent.com/alexpate/awesome-design-systems/master/README.md",
+    "https://raw.githubusercontent.com/bradtraversy/design-resources-for-developers/master/README.md",
+    "https://raw.githubusercontent.com/tailwindlabs/tailwindcss/main/README.md",
+    "https://raw.githubusercontent.com/twbs/bootstrap/main/README.md",
+    "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/README.md",
+    "https://raw.githubusercontent.com/awesome-css-group/awesome-css/master/readme.md",
+    "https://raw.githubusercontent.com/shadcn-ui/ui/main/README.md",
+    "https://raw.githubusercontent.com/lucide-icons/lucide/main/README.md"
   ]
 }

@@ -25,9 +25,14 @@ const SOCIALS = [
   { label: "GitHub", href: "https://github.com", brand: "GitHub" },
 ];
 
+/**
+ * BrandIcon — Font Awesome-style SVG for specialized brand glyphs.
+ * Retained alongside Lucide (lucide-react) line icons for social specialization.
+ * Sizing unified to h-5 w-5 for visual balance per spec.
+ */
 function BrandIcon({ brand }: { brand: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className="size-4">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className="h-5 w-5">
       <path d={BRAND_PATHS[brand]} />
     </svg>
   );
@@ -171,7 +176,7 @@ function FooterLinks({ items }: { items: Array<{ label: string; href: string }> 
         <li key={link.label}>
           <a
             href={link.href}
-            className="text-sm text-foreground-muted transition-colors hover:text-acid"
+            className="text-sm text-foreground-muted transition-colors duration-200 ease-out hover:text-acid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
           >
             {link.label}
           </a>
@@ -203,7 +208,7 @@ function FooterConnect() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.label}
-            className="grid size-10 place-items-center rounded-full border border-line bg-card text-foreground-muted transition-all duration-300 hover:-translate-y-0.5 hover:border-acid/60 hover:text-acid"
+            className="grid size-10 place-items-center rounded-full border border-line bg-card text-foreground-muted transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-acid/60 hover:text-acid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <BrandIcon brand={social.brand} />
           </a>
@@ -219,7 +224,7 @@ export function SiteFooter() {
     <footer className="relative overflow-hidden border-t border-line">
       <div className="absolute inset-x-0 -top-32 mx-auto size-96 rounded-full bg-accent/10 blur-[160px]" />
 
-      <div className="relative mx-auto max-w-7xl px-5 pt-24 sm:px-8">
+      <div className="container-fluid relative pt-24">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <FooterCTA />
           <Button asChild size="lg" className="self-start md:self-auto">

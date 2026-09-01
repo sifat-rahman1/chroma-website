@@ -72,7 +72,7 @@ export function Services() {
   return (
     <section id="services" className="relative scroll-mt-24 py-24 sm:py-32">
       <div className="absolute left-0 top-1/3 size-96 rounded-full bg-acid/5 blur-[160px]" />
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+      <div className="container-fluid relative">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}

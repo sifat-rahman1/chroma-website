@@ -80,7 +80,7 @@ export function Estimator() {
   return (
     <section id="contact" className="relative scroll-mt-24 py-24 sm:py-32">
       <div className="absolute left-1/2 top-1/2 size-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-[180px]" />
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+      <div className="container-fluid relative">
         <div className="grid gap-14 lg:grid-cols-2 lg:gap-20">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
@@ -138,7 +138,7 @@ export function Estimator() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-3xl border border-line bg-card/70 p-6 backdrop-blur-sm sm:p-9"
+            className="rounded-2xl border border-black/5 dark:border-white/10 bg-card shadow-sm p-6 backdrop-blur-sm sm:p-8 will-change-transform transform-gpu"
           >
             {status === "success" ? (
               <div
@@ -199,7 +199,7 @@ export function Estimator() {
                             onClick={() => toggleType(type)}
                             aria-pressed={active}
                             className={cn(
-                              "cursor-pointer rounded-full border px-4 py-2 text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                              "cursor-pointer rounded-full border px-4 py-2 text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                               active
                                 ? "border-acid bg-acid text-[#04202a] btn-glow-acid"
                                 : "border-foreground/15 bg-transparent text-foreground-muted hover:border-acid/50 hover:text-acid"
@@ -233,7 +233,7 @@ export function Estimator() {
                             aria-checked={active}
                             onClick={() => setBudget(option)}
                             className={cn(
-                              "cursor-pointer rounded-xl border px-2 py-3 text-center font-mono text-xs transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                              "cursor-pointer rounded-xl border px-2 py-3 text-center font-mono text-xs transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                               active
                                 ? "border-accent bg-accent/15 text-accent btn-glow-accent"
                                 : "border-foreground/15 text-foreground-muted hover:border-accent/50 hover:text-foreground"
@@ -264,7 +264,7 @@ export function Estimator() {
                       placeholder="Jane Cooper"
                       aria-invalid={!!errors.name}
                       className={cn(
-                        "mt-2 h-12 w-full rounded-xl border bg-muted px-4 text-sm text-foreground outline-none transition-all duration-300 placeholder:text-foreground-subtle focus:border-accent focus:ring-2 focus:ring-accent/30",
+                        "mt-2 h-12 w-full rounded-xl border bg-muted px-4 text-sm text-foreground outline-none transition-all duration-200 placeholder:text-foreground-subtle focus-visible:border-purple-500 focus-visible:ring-2 focus-visible:ring-purple-500/30",
                         errors.name ? "border-red-500/70" : "border-line"
                       )}
                     />
@@ -290,7 +290,7 @@ export function Estimator() {
                       placeholder="jane@company.com"
                       aria-invalid={!!errors.email}
                       className={cn(
-                        "mt-2 h-12 w-full rounded-xl border bg-muted px-4 text-sm text-foreground outline-none transition-all duration-300 placeholder:text-foreground-subtle focus:border-accent focus:ring-2 focus:ring-accent/30",
+                        "mt-2 h-12 w-full rounded-xl border bg-muted px-4 text-sm text-foreground outline-none transition-all duration-200 placeholder:text-foreground-subtle focus-visible:border-purple-500 focus-visible:ring-2 focus-visible:ring-purple-500/30",
                         errors.email ? "border-red-500/70" : "border-line"
                       )}
                     />
@@ -317,7 +317,7 @@ export function Estimator() {
                     rows={5}
                     aria-invalid={!!errors.message}
                     className={cn(
-                        "mt-2 w-full resize-none rounded-xl border bg-muted px-4 py-3 text-sm text-foreground outline-none transition-all duration-300 placeholder:text-foreground-subtle focus:border-accent focus:ring-2 focus:ring-accent/30",
+                        "mt-2 w-full resize-none rounded-xl border bg-muted px-4 py-3 text-sm text-foreground outline-none transition-all duration-200 placeholder:text-foreground-subtle focus-visible:border-purple-500 focus-visible:ring-2 focus-visible:ring-purple-500/30",
                       errors.message ? "border-red-500/70" : "border-line"
                     )}
                   />

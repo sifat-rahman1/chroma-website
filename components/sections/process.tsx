@@ -42,7 +42,7 @@ export function Process() {
   return (
     <section id="process" className="relative scroll-mt-24 py-24 sm:py-32">
       <div className="absolute right-0 top-0 size-96 rounded-full bg-accent/10 blur-[160px]" />
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+      <div className="container-fluid relative">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -92,7 +92,7 @@ export function Process() {
                   {step.index}
                 </div>
 
-                <div className="rounded-2xl border border-line bg-card/60 p-6 transition-all duration-500 hover:border-accent/40 hover:bg-card sm:p-7">
+                <div className="rounded-2xl border border-black/5 dark:border-white/10 bg-card shadow-sm p-6 transition-all duration-200 ease-out hover:border-accent/20 hover:shadow-md hover:shadow-accent/5 focus-within:ring-2 focus-within:ring-purple-500 sm:p-8 will-change-transform transform-gpu">
                   <div className="flex flex-wrap items-center gap-3">
                     <h3 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
                       {step.title}
@@ -101,14 +101,14 @@ export function Process() {
                       {step.duration}
                     </span>
                   </div>
-                  <p className="mt-3 max-w-2xl text-sm leading-relaxed text-foreground-muted sm:text-base">
+                  <p className="mt-4 max-w-2xl text-sm leading-relaxed text-foreground-muted sm:text-base">
                     {step.description}
                   </p>
-                  <div className="mt-5 flex flex-wrap gap-2">
+                  <div className="mt-6 flex flex-wrap gap-2">
                     {step.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-line bg-muted px-3.5 py-1.5 text-xs text-foreground-muted"
+                        className="rounded-full border border-line bg-muted px-3.5 py-1.5 text-xs text-foreground-muted transition-colors duration-200 hover:border-accent/20"
                       >
                         {tag}
                       </span>

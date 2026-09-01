@@ -419,7 +419,11 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
   return (
     <motion.article
       variants={item}
-      className="group relative overflow-hidden rounded-3xl border border-line bg-card/60 transition-all duration-500 hover:border-accent/40 hover:shadow-[0_0_60px_rgba(34,211,238,0.12)] cursor-pointer"
+      role="article"
+      tabIndex={0}
+      aria-label={`${project.title} — ${project.category}`}
+      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onClick(); } }}
+      className="group relative overflow-hidden rounded-2xl border border-black/5 dark:border-white/10 bg-card shadow-sm transition-all duration-300 ease-out hover:border-accent/20 hover:shadow-lg hover:shadow-accent/10 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background will-change-transform transform-gpu"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={onClick}
@@ -505,7 +509,7 @@ export function CaseStudies() {
   return (
     <section id="work" className="relative scroll-mt-24 py-24 sm:py-32">
       <div className="absolute right-0 top-24 size-96 rounded-full bg-accent/10 blur-[160px]" />
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+      <div className="container-fluid relative">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}

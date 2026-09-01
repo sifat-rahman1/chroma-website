@@ -19,7 +19,7 @@ function AccordionItem({
     <AccordionPrimitive.Item
       data-slot="accordion-item"
         className={cn(
-          "group rounded-2xl border border-line bg-card/60 backdrop-blur-sm transition-all duration-300 hover:border-accent/30 hover:bg-card group-data-[state=open]:border-accent/50 group-data-[state=open]:bg-card/80",
+          "group rounded-2xl border border-black/5 dark:border-white/10 bg-card shadow-sm backdrop-blur-sm transition-all duration-200 ease-out hover:border-accent/20 hover:shadow-md hover:shadow-accent/5 focus-within:ring-2 focus-within:ring-purple-500 will-change-transform transform-gpu",
           className
         )}
       {...props}
@@ -37,7 +37,7 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "flex flex-1 cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left outline-none transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background [&[data-state=open]>svg]:rotate-45 [&[data-state=open]>svg]:text-acid group-hover:bg-muted rounded-2xl -mx-6 -my-2 px-12 py-7",
+          "flex flex-1 cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left outline-none transition-all duration-200 ease-out focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background [&[data-state=open]>svg]:rotate-45 [&[data-state=open]>svg]:text-acid group-hover:bg-muted rounded-2xl -mx-6 -my-2 px-12 py-7",
           className
         )}
         {...props}

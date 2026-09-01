@@ -41,9 +41,9 @@ export function SiteHeader() {
     >
       <div
         className={cn(
-          "mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 transition-all duration-300 sm:px-8",
+          "container-fluid flex items-center justify-between gap-4 transition-all duration-300",
           scrolled
-            ? "mt-3 h-14 rounded-full border border-line bg-background/70 shadow-[0_8px_40px_rgba(0,0,0,0.45)] backdrop-blur-xl"
+            ? "mt-3 h-14 rounded-full border border-black/5 dark:border-white/10 bg-background/70 shadow-[0_8px_40px_rgba(0,0,0,0.45)] backdrop-blur-xl glass-surface"
             : "mt-0 h-20 border-b border-transparent"
         )}
       >
@@ -54,7 +54,7 @@ export function SiteHeader() {
             <a
               key={link.href}
               href={link.href}
-              className="group relative rounded-full px-4 py-2 text-sm font-medium text-foreground-muted transition-colors duration-300 hover:text-foreground"
+              className="group relative rounded-full px-4 py-2 text-sm font-medium text-foreground-muted transition-colors duration-200 ease-out hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background active:text-accent"
             >
               {link.label}
               <span className="absolute inset-x-4 -bottom-px h-px origin-left scale-x-0 bg-acid transition-transform duration-300 group-hover:scale-x-100" />
@@ -75,10 +75,10 @@ export function SiteHeader() {
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
                 <button
-                  aria-label="Open menu"
-                  className="grid size-11 cursor-pointer place-items-center rounded-full border border-line bg-card text-foreground transition-colors hover:border-acid/50 hover:text-acid"
+                  aria-label="Open navigation menu"
+                  className="grid size-11 cursor-pointer place-items-center rounded-full border border-line bg-card text-foreground transition-colors duration-200 ease-out hover:border-acid/50 hover:text-acid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-95"
                 >
-                  <Menu className="size-5" />
+                  <Menu className="size-5" aria-hidden="true" />
                 </button>
               </SheetTrigger>
               <SheetContent className="flex flex-col border-line bg-background/95 backdrop-blur-xl">

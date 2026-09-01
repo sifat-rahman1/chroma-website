@@ -136,7 +136,7 @@ export function Hero() {
       <div className="absolute -right-1/4 top-1/3 size-[500px] rounded-full bg-[radial-gradient(ellipse_at_center,var(--acid)_0%,transparent_70%)] opacity-15 hero-orb blur-[140px] animate-orb-pulse-2 animate-orb-drift-2 gpu-accelerated" aria-hidden="true" />
       <div className="absolute bottom-0 left-1/2 size-[600px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,var(--accent)_0%,transparent_70%)] opacity-10 hero-orb blur-[180px] animate-orb-pulse-1 gpu-accelerated" aria-hidden="true" />
 
-      <div className="relative mx-auto flex min-h-svh max-w-7xl flex-col px-5 pt-32 sm:px-8 sm:pt-36">
+      <div className="container-fluid relative flex min-h-svh flex-col pt-32 sm:pt-36">
         <div className="mx-auto flex max-w-4xl flex-1 flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -151,7 +151,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.1, delay: 0.2 }}
-            className="font-display text-[clamp(2.9rem,8vw,6.5rem)] font-bold leading-[0.95] tracking-[-0.03em] text-foreground"
+            className="font-display text-display text-foreground"
           >
             <LineReveal index={0} className="block">
               We Craft{" "}

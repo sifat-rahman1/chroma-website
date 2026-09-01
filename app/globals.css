@@ -3,17 +3,30 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* --------------------------------------------------------------------------
+   Design Token Architecture — Midnight Obsidian / Electric Purple
+   Light: #fcfbfe | Dark: #080511 (Midnight Obsidian) | Primary: #7e22ce
+   Semantic aliases ensure effortless light/dark switching with WCAG AA contrast.
+   -------------------------------------------------------------------------- */
 :root {
   color-scheme: light;
+  /* Core palette */
   --background: #fcfbfe;
   --foreground: #0f0b1e;
   --card: #ffffff;
   --muted: #f3f0fa;
   --line: rgba(15, 11, 30, 0.08);
-  --accent: #7c3aed;
+  --accent: #7e22ce;
   --acid: #a855f7;
   --foreground-muted: #5b4d7a;
   --foreground-subtle: #8b7aa6;
+  /* Semantic aliases */
+  --surface: var(--card);
+  --surface-muted: var(--muted);
+  --text-primary: var(--foreground);
+  --text-secondary: var(--foreground-muted);
+  --border-subtle: var(--line);
+  --accent-glow: var(--glow-accent);
   --grad-a: #a855f7;
   --grad-b: #c084fc;
   --grad-c: #e9d5ff;
@@ -23,7 +36,19 @@
   --scroll-track: #fcfbfe;
   --scroll-thumb: #d8cffe;
   --glow-acid: 168, 85, 247;
-  --glow-accent: 124, 58, 237;
+  --glow-accent: 126, 34, 206;
+  /* Typography scale (responsive) */
+  --text-display: clamp(2.9rem, 8vw, 6.5rem);
+  --text-h1: clamp(2.25rem, 5vw, 3.75rem);
+  --text-h2: clamp(1.875rem, 4vw, 2.25rem);
+  --text-h3: clamp(1.25rem, 3vw, 1.5rem);
+  /* Spacing scale — 8pt grid */
+  --space-1: 0.5rem;   /* 8px */
+  --space-2: 1rem;     /* 16px */
+  --space-3: 1.5rem;   /* 24px */
+  --space-4: 2rem;     /* 32px */
+  --space-6: 3rem;     /* 48px */
+  --space-8: 4rem;     /* 64px */
 }
 
 .dark {
@@ -37,6 +62,12 @@
   --acid: #c084fc;
   --foreground-muted: #a78bfa;
   --foreground-subtle: #8b7aa6;
+  --surface: var(--card);
+  --surface-muted: var(--muted);
+  --text-primary: var(--foreground);
+  --text-secondary: var(--foreground-muted);
+  --border-subtle: var(--line);
+  --accent-glow: var(--glow-accent);
   --grad-a: #a855f7;
   --grad-b: #c084fc;
   --grad-c: #e9d5ff;
@@ -59,6 +90,11 @@
   --color-line: var(--line);
   --color-accent: var(--accent);
   --color-acid: var(--acid);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border-subtle: var(--border-subtle);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-space), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
@@ -488,6 +524,100 @@ body {
   }
 }
 
+/* --------------------------------------------------------------------------
+   Typography Hierarchy — clamp() responsive scale, 8pt-aligned
+   -------------------------------------------------------------------------- */
+.text-display { font-size: var(--text-display); line-height: 0.95; letter-spacing: -0.03em; font-weight: 700; }
+.text-h1 { font-size: var(--text-h1); line-height: 1.1; letter-spacing: -0.02em; font-weight: 700; }
+.text-h2 { font-size: var(--text-h2); line-height: 1.15; font-weight: 700; }
+.text-h3 { font-size: var(--text-h3); line-height: 1.25; font-weight: 600; }
+.text-body { font-size: 1rem; line-height: 1.625; }
+.text-caption { font-size: 0.75rem; line-height: 1.5; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* --------------------------------------------------------------------------
+   Unified Surface — rounded-2xl, border highlights, shadow elevations
+   -------------------------------------------------------------------------- */
+.surface-card {
+  border-radius: 1rem; /* rounded-2xl = 16px */
+  border-width: 1px;
+  border-color: rgba(0,0,0,0.05);
+  background: var(--surface);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.dark .surface-card {
+  border-color: rgba(255,255,255,0.1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2), 0 8px 24px rgba(0,0,0,0.3);
+}
+.surface-card:hover {
+  border-color: rgb(var(--glow-accent) / 0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 16px 32px rgb(var(--glow-accent) / 0.08);
+}
+
+/* --------------------------------------------------------------------------
+   Bootstrap-inspired Container Fluid + Awesome CSS micro-effects
+   Structural consistency from mobile (px-5) → ultra-wide (2xl:px-16, max 1600px)
+   -------------------------------------------------------------------------- */
+.container-fluid {
+  width: 100%;
+  max-width: 1600px;
+  margin-inline: auto;
+  padding-left: 1.25rem; /* px-5 — mobile */
+  padding-right: 1.25rem;
+}
+@media (min-width: 640px) {
+  .container-fluid { padding-left: 2rem; padding-right: 2rem; } /* sm:px-8 */
+}
+@media (min-width: 1024px) {
+  .container-fluid { padding-left: 3rem; padding-right: 3rem; } /* lg:px-12 */
+}
+@media (min-width: 1536px) {
+  .container-fluid { padding-left: 4rem; padding-right: 4rem; } /* 2xl:px-16 */
+}
+
+/* Awesome CSS — glassmorphic surface borders */
+.glass-surface {
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+.dark .glass-surface {
+  border-color: rgba(255,255,255,0.08);
+}
+
+/* Awesome CSS — dynamic radial ambient glow */
+.radial-glow {
+  background: radial-gradient(ellipse at center, rgb(var(--glow-accent) / 0.15) 0%, transparent 70%);
+  filter: blur(40px);
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+.dark .radial-glow {
+  background: radial-gradient(ellipse at center, rgb(var(--glow-accent) / 0.22) 0%, transparent 70%);
+}
+
+/* Awesome CSS — smooth focus ring (shadcn-compatible) */
+.focus-ring {
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px rgb(168 85 247);
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility — unified focus ring (WCAG AA)
+   -------------------------------------------------------------------------- */
+*:focus-visible {
+  outline: none;
+}
+a:focus-visible, button:focus-visible, [role="button"]:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px rgb(168 85 247);
+}
+
+/* 8pt spacing helpers are provided via Tailwind p-2 (8px) p-4 (16px) p-6 (24px) p-8 (32px) p-12 (48px) p-16 (64px) */
+
 header, footer, [data-slot="accordion-item"], [data-slot="badge"], [data-slot="button"], [data-slot="sheet-content"] {
   transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
@@ -542,6 +672,11 @@ header, footer, [data-slot="accordion-item"], [data-slot="badge"], [data-slot="b
   transform: translateY(-50%);
   background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
   transition: 0.4s;
+}
+
+.theme-switch input:focus-visible + .theme-slider {
+  outline: 2px solid rgb(168 85 247);
+  outline-offset: 2px;
 }
 
 /* Checked state = dark mode */
