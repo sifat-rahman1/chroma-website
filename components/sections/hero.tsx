@@ -122,6 +122,12 @@ export function Hero() {
     <section id="top" className="relative overflow-hidden">
       <HeroBackground />
 
+      {/* Ambient purple spotlight behind hero text for legibility */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-purple-950/50 blur-[120px] pointer-events-none transform-gpu"
+        aria-hidden="true"
+      />
+
       <div className="absolute -left-40 -top-40 size-[560px] rounded-full bg-gradient-to-br from-amber-100/40 via-purple-100/30 to-transparent dark:from-purple-900/20 dark:via-violet-950/10 dark:to-transparent blur-[120px] gpu-accelerated" aria-hidden="true" />
 
       <div className="absolute -right-1/4 top-1/3 size-[500px] rounded-full bg-[radial-gradient(ellipse_at_center,var(--acid)_0%,transparent_70%)] opacity-15 hero-orb blur-[140px] animate-orb-pulse-2 animate-orb-drift-2 gpu-accelerated" aria-hidden="true" />
