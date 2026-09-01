@@ -31,11 +31,14 @@ function FloatingCard({
   className,
   children,
   delay = 0,
+  variant = "default",
 }: {
   className?: string;
   children: React.ReactNode;
   delay?: number;
+  variant?: "default" | "delayed";
 }) {
+  const floatClass = variant === "delayed" ? "animate-float-soft-delayed" : "animate-float-soft";
   return (
     <motion.div
       initial={{ opacity: 0, y: 20, scale: 0.9 }}
@@ -45,9 +48,9 @@ function FloatingCard({
         delay,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className={cn("absolute hidden lg:block", className)}
+      className={cn("absolute hidden lg:block will-change-transform transform-gpu", floatClass, className)}
     >
-      <div className="animate-float rounded-2xl border border-line bg-card p-4 shadow-[0_24px_60px_rgba(0,0,0,0.5)] backdrop-blur-xl">
+      <div className="glass-card rounded-2xl border border-line bg-card/70 p-4 shadow-[0_24px_60px_rgba(0,0,0,0.12)] backdrop-blur-md transition-all duration-500 hover:border-accent/40 hover:shadow-[0_16px_40px_rgb(var(--glow-accent)/0.18)] hover:bg-card/80 will-change-transform transform-gpu">
         {children}
       </div>
     </motion.div>
@@ -96,7 +99,7 @@ function Counter({ value: endValue, suffix = "", className, ...props }: { value:
 
 function ShimmerText({ children, className, ...props }: { children: React.ReactNode; className?: string }) {
   return (
-    <span className={cn("text-gradient-shimmer animate-shimmer inline-block", className)} {...props}>
+    <span className={cn("text-gradient-shimmer animate-shimmer inline-block shimmer-hover will-change-transform transform-gpu", className)} {...props}>
       {children}
     </span>
   );
@@ -138,8 +141,8 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center px-4 py-1.5 rounded-full text-[11px] font-semibold tracking-widest uppercase bg-white/80 border border-purple-100 text-purple-950 shadow-sm backdrop-blur-md dark:bg-purple-950/60 dark:border-purple-800/60 dark:text-purple-200 dark:shadow-inner mb-8"
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+            className="inline-flex items-center px-4 py-1.5 rounded-full text-[11px] font-semibold tracking-widest uppercase bg-white/80 border border-purple-100 text-purple-950 shadow-sm backdrop-blur-md dark:bg-purple-950/60 dark:border-purple-800/60 dark:text-purple-200 dark:shadow-inner mb-8 animate-pulse-ring will-change-transform transform-gpu"
           >
             Intent-Driven Design Infrastructure
           </motion.div>
@@ -176,8 +179,8 @@ export function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-8 max-w-xl text-base leading-relaxed text-foreground-muted sm:text-lg"
+            transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-8 max-w-xl text-base leading-relaxed text-foreground-muted sm:text-lg will-change-transform transform-gpu"
           >
             Full-service UI/UX design, brand identity, and front-end
             engineering studio. We turn ambitious ideas into products people
@@ -187,19 +190,19 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-10 flex flex-col items-center gap-3 sm:flex-row"
+            transition={{ duration: 0.7, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-10 flex flex-col items-center gap-3 sm:flex-row will-change-transform transform-gpu"
           >
             <Button asChild size="lg">
               <a href="#contact">
                 Book a Strategy Call
-                <ArrowUpRight />
+                <ArrowUpRight className="transition-transform duration-300" />
               </a>
             </Button>
             <Button asChild size="lg" variant="outline">
               <a href="#work">
                 Explore Works
-                <ArrowDown />
+                <ArrowDown className="transition-transform duration-300 group-hover:translate-y-0.5" />
               </a>
             </Button>
           </motion.div>
@@ -207,8 +210,8 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs tracking-[0.2em] text-foreground-subtle"
+            transition={{ duration: 0.7, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs tracking-[0.2em] text-foreground-subtle will-change-transform transform-gpu"
           >
             <span className="flex items-center gap-2">
               <Sparkles className="size-3.5 text-acid" />
@@ -221,7 +224,7 @@ export function Hero() {
           </motion.div>
         </div>
 
-        <FloatingCard className="right-[4%] top-[26%]" delay={0.9}>
+        <FloatingCard className="right-[4%] top-[26%]" delay={0.9} variant="default">
           <div className="flex items-center gap-3">
             <span className="grid size-10 place-items-center rounded-xl bg-accent/20 text-accent">
               <TrendingUp className="size-5" />
@@ -237,7 +240,7 @@ export function Hero() {
           </div>
         </FloatingCard>
 
-        <FloatingCard className="left-[4%] top-[48%]" delay={1.1}>
+        <FloatingCard className="left-[4%] top-[48%]" delay={1.1} variant="delayed">
           <div className="flex items-center gap-3">
             <span className="grid size-10 place-items-center rounded-xl bg-acid/15 text-acid">
               <Award className="size-5" />
