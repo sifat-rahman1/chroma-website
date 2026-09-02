@@ -14,57 +14,53 @@ const SERVICES = [
     index: "01",
     title: "UI/UX & Product Design",
     blurb:
-      "Interfaces that feel inevitable. We research, prototype, and design products users intuitively understand — and love to return to.",
+      "Shippable UI in 14 days — we map your flows into a token-based Figma system and test with 12 users in 3 days, so engineering stops guessing and starts merging.",
     deliverables: [
-      "UX Research",
-      "Wireframes",
-      "High-Fidelity UI",
-      "Interactive Prototypes",
-      "Usability Testing",
+      "Flow Mapping",
+      "Token System (Figma)",
+      "Tested Prototype",
+      "Engineer Handoff",
     ],
-    stat: "92% user satisfaction",
+    stat: "Finora: +140% onboarding in 14 weeks",
   },
   {
     index: "02",
     title: "Brand Strategy",
     blurb:
-      "Positioning, personality, and identity. We build brands with a point of view that cut through the noise and stay memorable.",
+      "Positioning you can import — naming, token semantics, and identity rules engineered for code, so brand isn’t a PDF your team ignores.",
     deliverables: [
-      "Brand Audit",
-      "Positioning",
-      "Naming",
-      "Visual Identity",
-      "Brand Guidelines",
+      "Positioning Narrative",
+      "Naming Architecture",
+      "Identity Tokens",
+      "Usage Rules",
     ],
-    stat: "40+ brands launched",
+    stat: "Aurea: 87% recall • 200+ retailers",
   },
   {
     index: "03",
     title: "Front-End Engineering",
     blurb:
-      "Design is only half the battle. We ship pixel-perfect, high-performance code with fluid motion and accessibility baked in.",
+      "Next.js that scores 100 on Lighthouse — motion, accessibility, and CLS <0.1 baked in, so marketing edits without breaking production.",
     deliverables: [
-      "React / Next.js",
-      "Motion & Interaction",
-      "Performance (CLS < 0.1)",
-      "Web Accessibility",
-      "CMS Integration",
+      "Next.js / React",
+      "Motion (Framer)",
+      "CLS <0.1 • LCP 1.2s",
+      "WCAG AA",
     ],
-    stat: "100 Lighthouse avg.",
+    stat: "Flux: 2.1× AOV • 1.2s LCP",
   },
   {
     index: "04",
     title: "Design Systems",
     blurb:
-      "Scalable component libraries that keep multi-product teams fast, consistent, and free to ship without breaking brand.",
+      "One library for 4 teams — Storybook + governance so you ship at 10× velocity without drift after we exit.",
     deliverables: [
       "Token Architecture",
-      "Component Library",
-      "Documentation",
-      "Governance",
-      "Team Enablement",
+      "Storybook Library",
+      "Governance Docs",
+      "Enablement",
     ],
-    stat: "10x faster shipping",
+    stat: "10× velocity — Pulse team",
   },
 ];
 
@@ -83,14 +79,13 @@ export function Services() {
           <div>
             <Badge variant="mono">02 — Capabilities</Badge>
             <h2 className="mt-5 font-display text-4xl font-bold leading-[0.95] tracking-tight sm:text-6xl">
-              Everything you need,
+              Every capability
               <br />
-              <span className="text-gradient">under one roof.</span>
+              <span className="text-gradient">tied to an outcome.</span>
             </h2>
           </div>
           <p className="max-w-sm text-base leading-relaxed text-foreground-muted">
-            No hand-offs, no finger-pointing. One senior team owns the product
-            from first sketch to shipped code.
+            <span className="font-semibold text-foreground">One senior team</span> owns it from token to merge. No handoff where context dies.
           </p>
         </motion.div>
 
@@ -145,7 +140,7 @@ export function Services() {
                           ))}
                         </div>
                         <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-acid/80">
-                          {service.stat}
+                          → {service.stat}
                         </p>
                       </div>
                     </div>

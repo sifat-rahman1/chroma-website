@@ -9,32 +9,32 @@ const STEPS = [
     title: "Discovery",
     duration: "Week 1",
     description:
-      "We dig deep into your market, users, and goals. Stakeholder interviews, competitor teardowns, and analytics audits inform everything that follows.",
-    tags: ["Stakeholder Interviews", "User Research", "Analytics Audit"],
+      "We interview 5 users and audit your analytics + flows. You get a prioritized flow map — not a 40-slide deck.",
+    tags: ["5 User Interviews", "Analytics Audit", "Flow Map"],
   },
   {
     index: "02",
     title: "Strategy",
     duration: "Weeks 2–3",
     description:
-      "Insights become a concrete plan: information architecture, UX strategy, success metrics, and a prioritized roadmap your team will actually use.",
-    tags: ["Information Architecture", "UX Strategy", "Roadmap"],
+      "Architecture, token naming, and success metrics locked. You approve the roadmap we burn down.",
+    tags: ["Information Architecture", "Token Naming", "Roadmap"],
   },
   {
     index: "03",
     title: "Rapid Prototyping",
     duration: "Weeks 4–6",
     description:
-      "High-fidelity, clickable prototypes tested with real users in real time. We iterate fast and validate every decision before a line of code is written.",
-    tags: ["Clickable Prototypes", "User Testing", "Fast Iteration"],
+      "High-fidelity, clickable build tested live. You watch 8 users fail — we fix it that same week.",
+    tags: ["Clickable Build", "8 Live Tests", "Weekly Fix"],
   },
   {
     index: "04",
-    title: "Design System & Handoff",
+    title: "System & Handoff",
     duration: "Weeks 7–8",
     description:
-      "A token-based design system, documented components, and clean code handoff. Your team ships confidently — and fast — long after we leave.",
-    tags: ["Design Tokens", "Component Library", "Developer Handoff"],
+      "Tokens, components, Storybook docs. Your team merges on day one — we stay for QA, then exit.",
+    tags: ["Token System", "Storybook", "Merge Day One"],
   },
 ];
 
@@ -53,14 +53,13 @@ export function Process() {
           <div>
             <Badge variant="mono">03 — How We Work</Badge>
             <h2 className="mt-5 font-display text-4xl font-bold leading-[0.95] tracking-tight sm:text-6xl">
-              From brief to
+              Brief to merge
               <br />
-              <span className="text-gradient">launch in 8 weeks.</span>
+              <span className="text-gradient">in 8 weeks.</span>
             </h2>
           </div>
           <p className="max-w-sm text-base leading-relaxed text-foreground-muted">
-            A battle-tested process that keeps you in the loop at every step —
-            no black boxes, no surprises.
+            <span className="font-semibold text-foreground">You see working software every 7 days.</span> No black boxes. No surprise invoices.
           </p>
         </motion.div>
 

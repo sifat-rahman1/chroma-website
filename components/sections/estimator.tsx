@@ -20,19 +20,19 @@ const BUDGETS = ["$10k–$25k", "$25k–$50k", "$50k+"];
 
 const NEXT_STEPS = [
   {
-    title: "Discovery call",
+    title: "Day 1: 30-min scope call",
     description:
-      "A free 30-minute call to understand your goals and scope. No pressure, no jargon.",
+      "You walk through flows + constraints. We map the 8 weeks live — no recycling.",
   },
   {
-    title: "Proposal & estimate",
+    title: "48h: Fixed-price proposal",
     description:
-      "Within 48 hours you'll receive a tailored proposal with timeline, budget, and team.",
+      "Scope, timeline, team, and price in your inbox. Not a deck you have to interpret.",
   },
   {
-    title: "Kickoff",
+    title: "Week 1: Research starts",
     description:
-      "Lock in the plan and we start week one with research and strategy. Simple.",
+      "Interviews and flow audit begin. You see a clickable build by day 7.",
   },
 ];
 
@@ -88,15 +88,14 @@ export function Estimator() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Badge variant="mono">04 — Project Estimator</Badge>
+            <Badge variant="mono">04 — Price before pitch</Badge>
             <h2 className="mt-5 font-display text-4xl font-bold leading-[0.95] tracking-tight sm:text-6xl">
-              Let&apos;s estimate
+              A scope, price,
               <br />
-              <span className="text-gradient">your project.</span>
+              <span className="text-gradient">and plan in 48 hours.</span>
             </h2>
             <p className="mt-6 max-w-md text-base leading-relaxed text-foreground-muted">
-              Tell us what you&apos;re building and we&apos;ll come back with a
-              realistic budget and timeline. Average reply time: under 24 hours.
+              <span className="font-semibold text-foreground">Tell us your flows, team, and deadline.</span> We’ll map the 8 weeks and reply in 14 hours on average — with scope, not sales.
             </p>
 
             <div className="mt-9 space-y-6">
@@ -161,7 +160,7 @@ export function Estimator() {
                   Thanks {name.split(" ")[0] || "there"} — we&apos;ve got your
                   brief. Expect a detailed estimate from us at{" "}
                   <span className="font-medium text-acid">{email}</span> within
-                  24 hours.
+                  48 hours.
                 </p>
                 <Button
                   variant="outline"
@@ -182,8 +181,8 @@ export function Estimator() {
                 <div>
                   <fieldset className="space-y-3">
                     <legend className="text-sm font-medium text-foreground">
-                      What do you need?{" "}
-                      <span className="text-foreground-subtle">(select all that apply)</span>
+                      Capability you need{" "}
+                      <span className="text-foreground-subtle">(we’ll scope mechanism + outcome)</span>
                     </legend>
                     <div
                       className="flex flex-wrap gap-2"
@@ -341,13 +340,13 @@ export function Estimator() {
                     </>
                   ) : (
                     <>
-                      Get My Estimate
+                      Get Fixed-Price Plan
                       <Send />
                     </>
                   )}
                 </Button>
                 <p className="mt-4 text-center font-mono text-[10px] uppercase tracking-[0.25em] text-foreground-subtle">
-                  No spam. No obligations. Ever.
+                  No spam. Scope first — call only if you approve.
                 </p>
               </form>
             )}

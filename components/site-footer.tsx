@@ -130,12 +130,12 @@ function FooterCTA() {
   return (
     <>
       <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-acid">
-        Let&apos;s build something
+        14-day system → 8-week ship
       </p>
       <h2 className="mt-4 font-display text-4xl font-bold leading-[0.95] tracking-tight text-foreground sm:text-6xl">
-        Have an idea?
+        Roadmap ready?
         <br />
-        Let&apos;s make it iconic.
+        <span className="text-gradient">We ship in 8 weeks.</span>
       </h2>
     </>
   );
@@ -145,8 +145,8 @@ function FooterEmail() {
   return (
     <div className="space-y-4">
       <CopyEmailButton />
-<p className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground-subtle">
-            Tap to copy — we reply within 24 hours
+ <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground-subtle">
+            Tap to copy — reply in 14h avg.
           </p>
     </div>
   );
@@ -228,7 +228,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <FooterCTA />
           <Button asChild size="lg" className="self-start md:self-auto">
-            <a href="#contact">Book a Strategy Call<ArrowUpRight /></a>
+            <a href="#contact">Get Fixed-Price Plan<ArrowUpRight /></a>
           </Button>
         </div>
 
@@ -238,9 +238,8 @@ export function SiteFooter() {
           <div className="space-y-5">
             <Logo />
             <p className="max-w-xs text-sm leading-relaxed text-foreground-muted">
-              An award-winning digital design & engineering studio crafting
-              experiences that drive growth.
-            </p>
+            <span className="font-semibold text-foreground">System in 14 days, product in 8 weeks.</span> We embed, ship token-driven UI, and your team merges on day one.
+          </p>
           </div>
 
           <FooterColumn title="Sitemap">

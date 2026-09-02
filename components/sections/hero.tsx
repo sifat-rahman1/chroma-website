@@ -144,7 +144,7 @@ export function Hero() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
             className="inline-flex items-center px-4 py-1.5 rounded-full text-[11px] font-semibold tracking-widest uppercase bg-white/80 border border-purple-100 text-purple-950 shadow-sm backdrop-blur-md dark:bg-purple-950/60 dark:border-purple-800/60 dark:text-purple-200 dark:shadow-inner mb-8 animate-pulse-ring will-change-transform transform-gpu"
           >
-            Intent-Driven Design Infrastructure
+            14-day system → 8-week ship
           </motion.div>
 
           <motion.h1
@@ -154,25 +154,10 @@ export function Hero() {
             className="font-display text-display text-foreground"
           >
             <LineReveal index={0} className="block">
-              We Craft{" "}
+              Figma to production
             </LineReveal>
             <LineReveal index={1} className="block">
-              <ShimmerText>Digital Experiences</ShimmerText>{" "}
-            </LineReveal>
-            <LineReveal index={2} className="block">
-              That{" "}
-            </LineReveal>
-            <LineReveal index={3} className="block">
-              <span className="relative inline-block">
-                Drive Growth.
-                <motion.span
-                  aria-hidden
-                  className="absolute -bottom-1.5 left-0 h-[3px] w-full rounded-full bg-acid"
-                  initial={{ scaleX: 0, opacity: 0 }}
-                  animate={{ scaleX: 1, opacity: 1 }}
-                  transition={{ duration: 0.9, delay: 1.3, ease: [0.22, 1, 0.36, 1] }}
-                />
-              </span>
+              <ShimmerText>— in 8 weeks flat.</ShimmerText>
             </LineReveal>
           </motion.h1>
 
@@ -182,9 +167,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="mt-8 max-w-xl text-base leading-relaxed text-foreground-muted sm:text-lg will-change-transform transform-gpu"
           >
-            Full-service UI/UX design, brand identity, and front-end
-            engineering studio. We turn ambitious ideas into products people
-            love — and revenue graphs that climb.
+            <span className="font-semibold text-foreground">We embed with your team</span>, audit your flows, and ship a token-driven product your engineers deploy on day one. No handoffs. No theater.
           </motion.p>
 
           <motion.div
@@ -195,32 +178,42 @@ export function Hero() {
           >
             <Button asChild size="lg">
               <a href="#contact">
-                Book a Strategy Call
+                Get Your Fixed-Price Plan
                 <ArrowUpRight className="transition-transform duration-300" />
               </a>
             </Button>
             <Button asChild size="lg" variant="outline">
               <a href="#work">
-                Explore Works
+                See Finora Live: +140% in 14 Weeks
                 <ArrowDown className="transition-transform duration-300 group-hover:translate-y-0.5" />
               </a>
             </Button>
           </motion.div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="mt-3 text-xs text-foreground-subtle"
+          >
+            Proposal in 48h • Scope, timeline, price — no deck
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs tracking-[0.2em] text-foreground-subtle will-change-transform transform-gpu"
+            className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs tracking-[0.15em] text-foreground-subtle will-change-transform transform-gpu"
           >
-            <span className="flex items-center gap-2">
+            <a href="#work" className="flex items-center gap-2 hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 rounded-full px-2 py-1">
               <Sparkles className="size-3.5 text-acid" />
-              <Counter value={250} suffix="+ Projects Shipped" className="text-foreground" />
-            </span>
+              <span><strong className="text-foreground">Finora</strong> — 47 flows → +140% onboarding</span>
+            </a>
             <span className="hidden h-1 w-1 rounded-full bg-foreground/25 sm:block" />
-            <span>12 years of experience</span>
+            <a href="#work" className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 rounded-full px-2 py-1">
+              <strong className="text-foreground">Pulse</strong> — 68% faster tasks
+            </a>
             <span className="hidden h-1 w-1 rounded-full bg-foreground/25 sm:block" />
-            <span>4 Continents</span>
+            <span>250+ products audited in 12 years</span>
           </motion.div>
         </div>
 
@@ -233,8 +226,8 @@ export function Hero() {
               <p className="font-display text-xl font-bold text-foreground">
                 <Counter value={140} suffix="%" className="text-foreground" />
               </p>
-              <p className="text-xs uppercase tracking-[0.2em] text-foreground-subtle">
-                Avg. Conversion Lift
+              <p className="text-xs uppercase tracking-[0.15em] text-foreground-subtle">
+                Finora • 47 flows mapped
               </p>
             </div>
           </div>
@@ -247,10 +240,10 @@ export function Hero() {
             </span>
             <div>
               <p className="font-display text-xl font-bold text-foreground">
-                <Counter value={35} suffix="+" className="text-foreground" />
+                <Counter value={68} suffix="%" className="text-foreground" />
               </p>
-              <p className="text-xs uppercase tracking-[0.2em] text-foreground-subtle">
-                Design Awards
+              <p className="text-xs uppercase tracking-[0.15em] text-foreground-subtle">
+                Pulse • faster task time
               </p>
             </div>
           </div>

@@ -66,7 +66,7 @@ export function SiteHeader() {
           <ThemeToggle />
           <Button asChild size="lg" className="hidden sm:inline-flex">
             <a href="#contact">
-              Book a Call
+              Get Fixed-Price Plan
               <ArrowUpRight />
             </a>
           </Button>
@@ -107,7 +107,7 @@ export function SiteHeader() {
                   <ThemeToggle />
                   <Button asChild className="w-full" size="lg">
                     <a href="#contact" onClick={() => setOpen(false)}>
-                      Book a Strategy Call
+                      Get Fixed-Price Plan
                       <ArrowUpRight />
                     </a>
                   </Button>

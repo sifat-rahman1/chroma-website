@@ -518,16 +518,15 @@ export function CaseStudies() {
           className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
         >
           <div>
-            <Badge variant="mono">01 — Selected Work</Badge>
+            <Badge variant="mono">01 — Shipped, not pitched</Badge>
             <h2 className="mt-5 font-display text-4xl font-bold leading-[0.95] tracking-tight sm:text-6xl">
-              Work that
+              Work that shipped.
               <br />
-              <span className="text-gradient">works harder.</span>
+              <span className="text-gradient">Metrics that stayed.</span>
             </h2>
           </div>
           <p className="max-w-sm text-base leading-relaxed text-foreground-muted">
-            Every engagement is measured by the numbers that matter to your
-            business — not just aesthetics.
+            <span className="font-semibold text-foreground">Four launches, one rule:</span> we measure the business metric — not Dribbble likes.
           </p>
         </motion.div>
 
@@ -536,16 +535,35 @@ export function CaseStudies() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="grid gap-6 lg:grid-cols-2"
+          className="grid gap-6 lg:grid-cols-12"
         >
-          {PROJECTS.map((project) => (
-            <ProjectCard
-              key={project.index}
-              project={project}
-              onClick={() => setSelectedProject(project)}
-            />
+          {PROJECTS.map((project, idx) => (
+            <div key={project.index} className={idx % 2 === 0 ? "lg:col-span-7" : "lg:col-span-5"}>
+              <ProjectCard
+                project={project}
+                onClick={() => setSelectedProject(project)}
+              />
+            </div>
           ))}
         </motion.div>
+
+        {/* Pull-quote break — low-density editorial after high-density grid */}
+        <motion.blockquote
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mt-16 overflow-hidden rounded-2xl border border-black/5 dark:border-white/10 bg-card shadow-sm p-8 lg:p-12"
+        >
+          <div className="absolute -right-20 -top-20 size-72 rounded-full bg-accent/10 blur-[80px] pointer-events-none" aria-hidden />
+          <p className="relative font-display text-xl leading-relaxed text-foreground sm:text-2xl">
+            “47 flows to one system in <span className="text-accent">14 days</span> — onboarding <span className="text-accent">+140%</span>, and our engineers merged on day one.”
+          </p>
+          <footer className="relative mt-4 flex items-center gap-3">
+            <span className="size-8 rounded-full bg-accent/20 grid place-items-center text-accent font-mono text-xs">FL</span>
+            <span className="text-sm text-foreground-muted"><span className="font-semibold text-foreground">Sarah Chen, CTO Finora</span> — placed adjacent to Finora proof, not hidden in a carousel</span>
+          </footer>
+        </motion.blockquote>
       </div>
 
       <CaseStudyModal
